@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Elena的学习旅程</title>
+    <link rel="stylesheet" href="zuoye.css">
+</head>
+<body>
+    <header>
+            <h1><a href="/">HTML与CSS</a></h1>
+            <h2>Elena的学习旅程</h2>
+            <a href=""><img src="fengjing.jpg"></a>
+    </header>
+
+    <main>
+        <nav>
+            <h3>介绍</h3>
+            <p>在历经了三年多的思想斗争后，18年我终于开始学习编程序了😂</p>
+            <p>在这里有我在学习中遇到的问题和解决办法</p>
+            <h3>问题目录</h3>
+            <ul>
+                <li><a href="#如何用CSS把文字放在图片里面？">如何用CSS把文字放在图片里面？</a></li>
+                <li><a href="#如何用CSS把图片和文字放在同一行？">如何用CSS把图片和文字放在同一行？</a></li>
+                <li><a href="#如何用CSS把元素放中间？">如何用CSS把元素放中间？</a></li>
+            </ul>
+        </nav>
+
+        <div id="a5">
+            <article id="如何用CSS把元素放中间？">
+                <h2>如何用CSS把元素放中间？</h2>
+                <h3>25/02/2018 </h3>
+                <P>
+                  可以改变元素的<code>margin-left</code>和
+                  <code>margin-right</code>,属性值用<code>auto</code>
+                  会自动调整两边的边距。
+                </P>
+                <p>
+                    <strong>注：auto这个属性值只能用于有固定的width和元素的display属性值是block的元素。</strong>
+                </p>
+                <p>
+                    auto是调整这个大的元素，不会改变这个元素里面的文字，图片等等的位置。如果文字，
+                    图片也需要改变，那么就需要对这些文字，图片等等做出相应的调整。
+                </p>
+            </article>
+
+            <article id="如何用CSS把图片和文字放在同一行？">
+                <h2>如何用CSS把图片和文字放在同一行？</h2>
+                <h3>24/02/2018</h3>
+                <p>
+                   需要先把图片和文字放在同一个块元素里，因为图片<code>display</code> 的默认值
+                   是<code>inline</code>,本身就是按1,2,3这样排序的。但是文字p/h/ul/li...来标
+                   写的，这些元素的<code>display</code>的默认值<code>block</code>,所以需要把
+                   p/h/ul/li...这些元素的<code>display</code> 的属性值改成<code>inline</code>
+                   就可以让图片和文字呈现横排排列了。
+                </p>
+            </article>
+
+            <article id="如何用CSS把文字放在图片里面？">
+                <h2>如何用CSS把文字放在图片里面？</h2>
+                <h3>23/02/2018</h3>
+                <p>
+                    1.需要先把图片和文字放在同一个块元素里，然后给块元素一个<code>position: relative;</code>
+                    的属性和属性值。
+                </p>
+                <p>
+                    2.给在文字所在的块元素一个<code>position: absolute;</code>的属性和属性值。
+                </p>
+                <p>
+                    3.给文字一个<code>top/bottom/left/right: 0/..px;</code>
+                    的属性和属性值，这样文字就会出现在图片里你设定的位置了。
+                </p>
+            </article>
+        </div>
+        
+    </main>
+    
+</body>
+</html>
