@@ -131,6 +131,11 @@ li {
     text-decoration: underline;
 }
 
+pre {
+    background-color: rgb(68, 68, 68);
+    color: white;
+}
+
 
 
 
