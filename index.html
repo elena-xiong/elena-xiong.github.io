@@ -68,9 +68,39 @@
                     2.给在文字所在的块元素一个<code>position: absolute;</code>的属性和属性值。
                 </p>
                 <p>
-                    3.给文字一个<code>top/bottom/left/right: 0/..px;</code>
+                    3.改变文字的<code>display: block</code>，再给文字一个<code>top/bottom/left/right: 0/..px;</code>
                     的属性和属性值，这样文字就会出现在图片里你设定的位置了。
                 </p>
+                <strong>注：只有块元素才会叠加</strong>
+                <p>
+                    附加：如何有鼠标放在图片上有文字出来，反之看不到文字的效果？<br/>
+                    1.需要给文字一个<code>display: none;</code>的属性和属性值，这样当鼠标不在
+                    图片上时，文字是隐藏的。<br/>
+                    2.需要给图片一个<code>:hover {display: block;}</code>的伪类属性，其属性值是改变<code>:hover</code>
+                    后面的元素，这样鼠标放上去文字就会显现出来了。<br/>
+                </p>
+                <pre>
+    &lt;div&gt;
+        &lt;img src=&quot;fengjing.jpg&quot;&gt;
+        &lt;span&gt;我是一个小笨蛋，学习编程序好困难&lt;/span&gt;
+    &lt;/div&gt;
+                </pre>
+                <pre>
+    div {
+        position: relative;
+    }
+    
+    span {
+        position: absolute;
+        top: 0;
+        display: none;
+        background-color: rgb(241, 201, 142, 0.5);
+    }
+    
+    img:hover + span  {
+        display: block;
+    }
+                </pre>
             </article>
         </div>
         
