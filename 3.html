@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Elena的学习旅程</title>
+    <link rel="stylesheet" href="zuoye.css">
+</head>
+<body>
+    <header>
+            <h1><a href="/">HTML与CSS</a></h1>
+            <h2>Elena的学习旅程</h2>
+            <a href=""><img src="fengjing.jpg"></a>
+    </header>
+
+    <main>
+        <nav>
+            <h3>介绍</h3>
+            <p>在历经了三年多的思想斗争后，18年我终于开始学习编程序了😂</p>
+            <p>在这里有我在学习中遇到的问题和解决办法</p>
+            <h3>问题目录</h3>
+            <span id="daohanglanhtml">HTML</span>
+            <ul>
+                <li><a href="#块元素排序">块元素排序</a></li>
+                <li><a href="#用HTML如何做用户填写栏？">用HTML如何做用户填写栏？</a></li>
+                <li><a href="#如何用HTML做下拉选项框？">如何用HTML做下拉选项框？</a></li>
+                <li><a href="#如何用HTML做固定不变的表格？">如何用HTML做固定不变的表格？</a></li>
+                <li><a href="#如何用HTML做表格？(可添加内容的)">如何用HTML做表格？(可添加内容的)</a></li>
+            </ul>
+            <span id="daohanglancss">CSS</span>
+            <ul>
+                <li><a href="#如何让FOOTER一直保持在网页最下面？">如何让FOOTER一直保持在网页最下面？</a></li>
+                <li><a href="#CSS的position属性">CSS的position属性</a></li>
+                <li><a href="#CSS伪类 Pseudo-class">CSS伪类 Pseudo-class</a></li>
+                <li><a href="#CSS自定义选择器">CSS自定义选择器</a></li>
+                <li><a href="#CSS选择器 Selectors">CSS选择器 Selectors</a></li>
+                <li><a href="#box-sizing">box-sizing</a></li>
+                <li><a href="#如何用CSS控制盒子的背景">如何用CSS控制盒子的背景</a></li>
+                <li><a href="#如何用CSS把元素放中间？">如何用CSS把元素放中间？</a></li>
+                <li><a href="#如何用CSS把图片和文字放在同一行？">如何用CSS把图片和文字放在同一行？</a></li>
+                <li><a href="#如何用CSS把文字放在图片里面？">如何用CSS把文字放在图片里面？</a></li>
+            </ul>
+        </nav>
+
+        <div id="a5">
+            <article>
+                <h2>CSS伪类 Pseudo-class</h2>
+                <h3>04/03/2018</h3>
+                <p>
+                    CSS伪类是一个以冒号（：）作为前缀关键字的，是让指定的元素在特定的状态下
+                    呈现的样子。<br/>
+                    常用的有：<br/>
+                <pre>
+/* 鼠标放在上面发生改变 */
+:hover {...} 
+
+/* 这两个伪元素，是在同一个父元素内有几个并列的子元素时，可以用这个
+来准确改变子元素的值（如：位置，颜色，大小等等）*/
+:nth-of-type(odd) {...} 奇数
+:nth-of-type(even) {...} 偶数
+
+/* 是按鼠标时发生改变，多数和a，button一起用 */
+:active {...}
+
+/* 是链接地址已经看过后发生改变，一般是颜色的改变，只能
+和a一起使用
+:visited {...}
+                </pre>
+                </p>
+            </article>
+
+            <article>
+                <h2>CSS自定义选择器</h2>
+                <h3>04/03/2018</h3>
+                <P>
+                    在HTML里面用<code>data-自定义名称</code>来给元素自定义一个属性，后面
+                    也可以添加<code>"=..."</code>来定义一个属性值，然后为了改变这个元素
+                    在CSS里用：
+                    <pre>
+/* 该选择器包含了<strong>data-自定义名称</strong>属性的所有元素，不管其属性值是什么 */                        
+[data-自定义名称] {...} 
+
+/* 该选择器是仅选择了<strong>data-自定义名称</strong>属性中属性值为<strong>"..."</strong>的元素 */
+[data-自定义名称="..."] {...}
+
+/* 该选择器是仅选择了<strong>data-自定义名称</strong>属性中属性值为<strong>"..."</strong>的元素，<br/>以空格间隔了多个属性值 */
+[data-自定义名称~="..."] {...}
+                    </pre>
+                </P>
+            </article>
+
+            <article>
+                <h2>CSS选择器 Selectors</h2>
+                <h3>04/03/2018</h3>
+                
+                    A , B {...} 是A与B同时选择；<br/>
+                    <pre>
+&lt;p&gt;Lorem ipsum dolor sit amet&lt;/p&gt;
+&lt;strong&gt;consectetur adipiscing elit&lt;/strong&gt;
+                    </pre>
+                    <pre>
+p , strong {
+    color: yellow;
+} /* p和strong一起改变 */
+                    </pre>
+
+                    A B {...} 是选择A里面的B；<br/>
+                    <pre>
+&lt;div&gt;
+    &lt;p&gt;我会变&lt;/p&gt;
+    &lt;article&gt;
+        &lt;p&gt;我也会变&lt;/p&gt;
+    &lt;/article&gt;
+&lt;/div&gt;
+                    </pre>
+                    <pre>
+div p {
+    color: yellow;
+} /* 改变了p */
+                    </pre>
+
+                    A > B {...} 是选择了B（B是A的子元素）；<br/>
+                    <pre>
+&lt;div&gt;
+    &lt;p&gt;我会变&lt;/p&gt;
+    &lt;article&gt;
+        &lt;p&gt;我不会变&lt;/p&gt;
+    &lt;/article&gt;
+&lt;/div&gt;
+                    </pre>
+                    <pre>
+div > p {
+    color: yellow;
+} /* 改变了子元素p */
+                    </pre>
+
+                    A + B {...} 是选择了B（B是A的下一个兄弟元素）；<br/>
+                    <pre>
+&lt;div&gt; consectetur adipiscing elit&lt;/div>
+&lt;p&gt;Lorem ipsum dolor sit amet&lt;/p&gt;
+                    </pre>
+                    <pre>
+div + p {
+    color: yellow;
+} /* 改变了p */
+                    </pre>
+
+                    A ~ B {...} 是选择了B（B是A的下面的兄弟元素们）；
+                    <pre>
+&lt;div&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet&lt;/p&gt;
+    &lt;strong&gt;consectetur adipiscing elit&lt;/strong&gt;
+&lt;/div&gt;
+                    </pre>   
+                    <pre>
+div ~ p, div ~ strong {
+    color: yellow;
+} /* 改变了p和strong */
+                    </pre>         
+                
+            </article>
+
+            <article>
+                    <h2>box-sizing</h2>
+                    <h3>03/03/2018</h3>
+                    <p>
+                        这个CSS属性用于更改计算元素宽度和高度的默认CSS
+                        盒子模型。<br/>
+                        <code>box-sizing: content-box;</code>是默认，一般
+                        不需要写；<br/>
+                        <code>box-sizing: border-box;</code>是告诉浏览器
+                        去理解你设置的边框和内边距的值是包含在<code>width</code>内的。<br/>
+                        <strong>
+                            注：<br/>
+                            为了方便，大家一般会把 * {
+                                box-sizing: border-box;
+                            }写在CSS最前面。
+                        </strong>
+                    </p>
+            </article>
+
+            <article >
+                <h2>如何用CSS控制盒子的背景</h2>
+                <h3>02/03/2018</h3>
+                <p>给盒子添加以下这些CSS属性，其属性值自己改变</p>
+                <pre>
+div {
+    /* 背景色 */
+    background-color: yellow;
+
+    /* 渐变效果 */ 
+    background-image: linear-gradient (to bottom, yellow, #dddd00, 50%, orange);
+
+    /* 放正常图片 */
+    background-image: url(......);
+
+    /* 图片小于盒子时，默认会重复，其属性值no-repeat选择不重复 */
+    background-repeat: no-repeat;
+
+    /* 背景的位置，控制上下左右,跟图片一起使用*/
+    background-position: 99% center;
+}
+                </pre>
+
+                <div id="xiaoguotu1"></div>
+                <div id="xiaoguotu2"></div>
+                <div id="xiaoguotu3"></div>
+                <div id="xiaoguotu4"></div>
+                <div id="xiaoguotu5"></div>
+            </article>
+            <div class="shunxu">
+                    <a href="index.html">1</a>
+                    <a href="2.html">2</a>
+                    3
+                    <a href="4.html">4</a>
+                    <a href="5.html">5</a>
+            
+        </div>
