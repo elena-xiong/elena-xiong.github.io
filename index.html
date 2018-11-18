@@ -20,14 +20,71 @@
             <p>在历经了三年多的思想斗争后，18年我终于开始学习编程序了😂</p>
             <p>在这里有我在学习中遇到的问题和解决办法</p>
             <h3>问题目录</h3>
-            <ul>
-                <li><a href="#如何用CSS把文字放在图片里面？">如何用CSS把文字放在图片里面？</a></li>
-                <li><a href="#如何用CSS把图片和文字放在同一行？">如何用CSS把图片和文字放在同一行？</a></li>
-                <li><a href="#如何用CSS把元素放中间？">如何用CSS把元素放中间？</a></li>
-            </ul>
+            <span id="daohanglanhtml">HTML</span>
+                <ul>
+                    <li><a href="#块元素排序">块元素排序</a></li>
+                    <li><a href="#用HTML如何做用户填写栏？">用HTML如何做用户填写栏？</a></li>
+                    <li><a href="#如何用HTML做下拉选项框？">如何用HTML做下拉选项框？</a></li>
+                    <li><a href="#如何用HTML做固定不变的表格？">如何用HTML做固定不变的表格？</a></li>
+                    <li><a href="#如何用HTML做表格？(可添加内容的)">如何用HTML做表格？(可添加内容的)</a></li>
+                </ul>
+                <span id="daohanglancss">CSS</span>
+                <ul>
+                    <li><a href="#如何让FOOTER一直保持在网页最下面？">如何让FOOTER一直保持在网页最下面？</a></li>
+                    <li><a href="#CSS的position属性">CSS的position属性</a></li>
+                    <li><a href="#CSS伪类 Pseudo-class">CSS伪类 Pseudo-class</a></li>
+                    <li><a href="#CSS自定义选择器">CSS自定义选择器</a></li>
+                    <li><a href="#CSS选择器 Selectors">CSS选择器 Selectors</a></li>
+                    <li><a href="#box-sizing">box-sizing</a></li>
+                    <li><a href="#如何用CSS控制盒子的背景">如何用CSS控制盒子的背景</a></li>
+                    <li><a href="#如何用CSS把元素放中间？">如何用CSS把元素放中间？</a></li>
+                    <li><a href="#如何用CSS把图片和文字放在同一行？">如何用CSS把图片和文字放在同一行？</a></li>
+                    <li><a href="#如何用CSS把文字放在图片里面？">如何用CSS把文字放在图片里面？</a></li>
+                </ul>
         </nav>
 
         <div id="a5">
+            <article id="如何用HTML做表格？(可添加内容的)">
+                <h2>如何用HTML做表格？(可添加内容的)</h2>
+                <h3>28/02/2018</h3>
+                <p>
+                    1.开始要写<code>&lt;form action=&quot;http://....&quot; method=&quot;POST&quot;&gt;&lt;/form&gt;</code>
+                    <code>action</code>的属性值根据你要把表格发送的后台而改变。<code>method</code>
+                    的属性值是固定不变的。
+                </p>
+                <p>
+                    2.表格是由很多的快性元素组成的，如：<code>div/p/h/ul/li...</code>
+                    <pre>
+&lt;div&gt;
+&lt;label for=&quot;mingzi&quot;&gt;Prenom&lt;/label&gt;
+&lt;input type=&quot;text&quot; name=&quot;mingzi&quot; placeholder=&quot;名字&quot;&gt;
+&lt;/div&gt;
+                    </pre>
+                </p>
+                <p>
+                    <form action="http://..." method="POST"></form>
+                    <div>
+                        <label for="mingzi">Prenom</label>
+                        <input type="text" name="mingzi" placeholder="名字">
+                    </div>
+                </p>
+                <p>
+                    <strong>注：<br/>
+                    1,在input里面，可以加上placeholder="123@qq.com"的属性和属性值，其属性值
+                    自己改变，来客人用户表格里该填写什么形式的内容。
+                    2,切记for和name里面的属性值必须一样，type是规定了表格里面填写的是哪种形式的内容。</strong><br/>
+                    type有很多固定的属性值，其中最常用的是：<br/>
+                    <code>text</code>:为了放一个普通的文本；<br/>
+                    <code>email</code>:为了输入一个邮箱地址；<br/>
+                    <code>checkbox</code>:勾选框；<br/>
+                    <code>file</code>:为了上传文件；<br/>
+                    <code>radio</code>:单选按钮，必须同时放几个才有用，这几个的name值必须一样；<br/>
+                    <code>submit</code>:提交表格按钮，如果不需要默认的按钮内容，可以加上<strong>
+                        value="..."</strong>这个属性。
+                </p>   
+   
+            </article>
+
             <article id="如何用CSS把元素放中间？">
                 <h2>如何用CSS把元素放中间？</h2>
                 <h3>25/02/2018 </h3>
@@ -43,6 +100,28 @@
                     auto是调整这个大的元素，不会改变这个元素里面的文字，图片等等的位置。如果文字，
                     图片也需要改变，那么就需要对这些文字，图片等等做出相应的调整。
                 </p>
+                <pre>
+&lt;div&gt;
+    &lt;p&gt;
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Suspendisse congue auctor quam, non fermentum mauris convallis 
+        get. Nam at facilisis felis, quis cursus neque. Donec ut 
+        suscipit massa. Morbi ultricies quam scelerisque, dignissim 
+        velit eu, blandit nulla.
+    &lt;/p&gt; 
+    &lt;img src=&quot;fengjing.jpg&quot;/&gt;
+&lt;/div&gt;
+                </pre>
+                <pre>
+div {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+img {
+    display: block;
+}
+                </pre>
             </article>
 
             <article id="如何用CSS把图片和文字放在同一行？">
@@ -55,6 +134,27 @@
                    p/h/ul/li...这些元素的<code>display</code> 的属性值改成<code>inline</code>
                    就可以让图片和文字呈现横排排列了。
                 </p>
+                <pre>
+&lt;div&gt;
+    &lt;img src=&quot;fengjing.jpg&quot;/&gt;
+    &lt;p&gt;
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Suspendisse congue auctor quam, non fermentum mauris convallis 
+        get. Nam at facilisis felis, quis cursus neque. Donec ut 
+        suscipit massa. Morbi ultricies quam scelerisque, dignissim 
+        velit eu, blandit nulla. 
+    &lt;/p&gt;
+&lt;/div&gt;
+                </pre>
+                <pre>
+p {
+    display: inline;
+}
+
+img {
+    float: left;*/元素往哪里飘
+}
+                </pre>
             </article>
 
             <article id="如何用CSS把文字放在图片里面？">
@@ -103,7 +203,13 @@
                 </pre>
             </article>
         </div>
-        
+        <div class="shunxu">
+            1 
+            <a href="2.html">2</a> 
+            <a href="3.html">3</a>
+            <a href="4.html">4</a>
+            <a href="5.html">5</a>
+        </div>
     </main>
     
 </body>
