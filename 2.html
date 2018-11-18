@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Elena的学习旅程</title>
+    <link rel="stylesheet" href="zuoye.css">
+</head>
+<body>
+    <header>
+            <h1><a href="/">HTML与CSS</a></h1>
+            <h2>Elena的学习旅程</h2>
+            <a href=""><img src="fengjing.jpg"></a>
+    </header>
+
+    <main>
+        <nav>
+            <h3>介绍</h3>
+            <p>在历经了三年多的思想斗争后，18年我终于开始学习编程序了😂</p>
+            <p>在这里有我在学习中遇到的问题和解决办法</p>
+            <h3>问题目录</h3>
+            <span id="daohanglanhtml">HTML</span>
+            <ul>
+                <li><a href="#块元素排序">块元素排序</a></li>
+                <li><a href="#用HTML如何做用户填写栏？">用HTML如何做用户填写栏？</a></li>
+                <li><a href="#如何用HTML做下拉选项框？">如何用HTML做下拉选项框？</a></li>
+                <li><a href="#如何用HTML做固定不变的表格？">如何用HTML做固定不变的表格？</a></li>
+                <li><a href="#如何用HTML做表格？(可添加内容的)">如何用HTML做表格？(可添加内容的)</a></li>
+            </ul>
+            <span id="daohanglancss">CSS</span>
+            <ul>
+                <li><a href="#如何让FOOTER一直保持在网页最下面？">如何让FOOTER一直保持在网页最下面？</a></li>
+                <li><a href="#CSS的position属性">CSS的position属性</a></li>
+                <li><a href="#CSS伪类 Pseudo-class">CSS伪类 Pseudo-class</a></li>
+                <li><a href="#CSS自定义选择器">CSS自定义选择器</a></li>
+                <li><a href="#CSS选择器 Selectors">CSS选择器 Selectors</a></li>
+                <li><a href="#box-sizing">box-sizing</a></li>
+                <li><a href="#如何用CSS控制盒子的背景">如何用CSS控制盒子的背景</a></li>
+                <li><a href="#如何用CSS把元素放中间？">如何用CSS把元素放中间？</a></li>
+                <li><a href="#如何用CSS把图片和文字放在同一行？">如何用CSS把图片和文字放在同一行？</a></li>
+                <li><a href="#如何用CSS把文字放在图片里面？">如何用CSS把文字放在图片里面？</a></li>
+            </ul>
+        </nav>
+
+        <div id="a5">
+                <article>
+                        <h2>块元素排序</h2>
+                        <h3>02/03/2018</h3>
+                        <p>
+                            块元素的排序用<code>z-index</code>的属性，当没有添加这个CSS
+                            属性时，块元素会按如下顺序堆叠（从底到顶）：<br/>
+                            1.根元素的背景和边界；<br/>
+                            2.没有任何定位的块元素（没有<code>position</code>或者<code>position: static</code>）
+                              按HTML中的出现顺序堆叠；<br/>
+                            3.有定位的块元素，同样按HTML中的出现顺序堆叠。
+                        </p>
+                        <strong>如何用CSS来给块元素排序叠加呢？</strong>
+                        <p>
+                            1.如果想要自己控制块元素的堆叠的顺序，可以给这些块元素添加<code>z-index</code>的CSS属性，
+                            其属性值自己排序，那么就会按你写的顺序来堆叠了。<br/>
+                            2.如果想要有元素块重复叠加的效果，那么在给这些需要叠上去的元素添加<code>top/bottom/left/right</code>
+                            的属性，其属性值根据你想要叠加上去的数量值来写。
+                        </p>
+                    </article>
+            <article>
+                <h2>用HTML如何做用户填写栏？</h2>
+                <h3>01/03/2018</h3>
+                <pre>
+&lt;label for=&quot;duanxing&quot;&gt;message&lt;/label&gt;
+&lt;textarea name=&quot;duanxing&quot;&gt;&lt;/textarea&gt;
+                </pre>
+                <p>
+                    <strong>注：for和name的属性值是一样的<br/>
+                    &lt;textarea&gt;这个中间切记不能填写任何东西,这是留给用户写的。&lt;/textarea&gt;</strong>
+                </p>
+                <textarea>这个中间切记不能填写任何东西,这是留给用户写的。</textarea>
+            </article>
+
+            <article>
+                <h2>如何用HTML做下拉选项框？</h2>
+                <h3>01/03/2018</h3>
+                <pre>
+&lt;label for=&quot;xingbie&quot;&gt;sexe&lt;/label&gt;
+&lt;select name=&quot;xingbie&quot;&gt;
+    &lt;option value=&quot;M&quot;&gt;Homme&lt;/option&gt;
+    &lt;option value=&quot;F&quot;&gt;Femme&lt;/option&gt;
+&lt;/select&gt;
+                </pre>
+                <label for="xingbie">sexe</label>
+                <select name="xingbie">
+                    <option value="M">Homme</option>
+                    <option value="F">Femme</option>
+                </select>
+                <p>
+                    <strong>
+                        注：<br/>
+                        1，for和name的属性值必须一样；<br/>
+                        2，option可以写很多条，但是必须要添加value的属性值。
+                    </strong>
+                </p>
+            </article>
+
+            <article>
+                <h2>如何用HTML做固定不变的表格？</h2>
+                <h3>01/03/2018</h3>
+                <p>用&lt;table&gt;的元素来做，线条框框必须用CSS来做。</p>
+                <pre>
+&lt;table&gt;
+&lt;tr&gt;
+    &lt;th&gt;&lt;/th&gt;&lt;!-- th为了最上面或者最边上的标签(表头单元格) --&gt;
+    &lt;th&gt;年龄&lt;/th&gt;
+    &lt;th&gt;身高&lt;/th&gt;
+    &lt;th&gt;体重&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;A同学&lt;/td&gt;&lt;!-- 普通单元格 --&gt;
+    &lt;td&gt;15岁&lt;/td&gt;
+    &lt;td&gt;170cm&lt;/td&gt;
+    &lt;td&gt;50kg&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;B同学&lt;/td&gt;
+    &lt;td&gt;13岁&lt;/td&gt;
+    &lt;td&gt;156cm&lt;/td&gt;
+    &lt;td&gt;38kg&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;C同学&lt;/td&gt;
+    &lt;td&gt;16岁&lt;/td&gt;
+    &lt;td&gt;178cm&lt;/td&gt;
+    &lt;td&gt;55kg&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+                </pre>
+                <pre>
+table {
+    border: 2px solid plum;
+    /* 表格边框分开还是合并的属性 */
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table td,
+table th {
+    text-align: center;
+    border: 2px solid plum;
+}  
+                </pre>
+                <table>
+                        <tr>
+                            <th></th>
+                            <th>年龄</th>
+                            <th>身高</th>
+                            <th>体重</th>
+                        </tr>
+                        <tr>
+                            <td>A同学</td>
+                            <td>15岁</td>
+                            <td>170cm</td>
+                            <td>50kg</td>
+                        </tr>
+                        <tr>
+                            <td>B同学</td>
+                            <td>13岁</td>
+                            <td>156cm</td>
+                            <td>38kg</td>
+                        </tr>
+                        <tr>
+                            <td>C同学</td>
+                            <td>16岁</td>
+                            <td>178cm</td>
+                            <td>55kg</td>
+                        </tr>
+                    </table>
+            </article>
+        </div>
+        <div class="shunxu">
+            <a href="index.html">1</a>
+            2
+            <a href="3.html">3</a>
+            <a href="4.html">4</a>
+            <a href="5.html">5</a>
+        </div>
+    </main>
+    
+</body>
+</html>
