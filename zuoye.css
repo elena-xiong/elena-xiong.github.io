@@ -117,6 +117,14 @@ nav li a:hover {
     text-decoration-color: black;
 }
 
+#daohanglanhtml {
+    background-color: rgb(240, 41, 41);
+}
+
+#daohanglancss {
+    background-color: rgb(240, 41, 41);
+}
+
 ul {
     padding-left: 0;
     font-weight: bold;
@@ -134,9 +142,79 @@ li {
 pre {
     background-color: rgb(68, 68, 68);
     color: white;
+    padding: 16px;
 }
 
+table {
+    border: 2px solid plum;
+    /* 表格边框分开还是合并的属性 */
+    border-collapse: collapse;
+    width: 100%;
+}
 
+table td,
+table th {
+    text-align: center;
+    border: 2px solid plum;
+}
+
+.shunxu {
+    text-align: center;
+    color: rgb(240, 41, 41);
+}
+
+.shunxu a {
+    color: #000;
+}
+
+#xiaoguotu1 {
+    background-color: yellow;
+    width: 200px;
+    height: 70px;
+    display: inline-block;
+}
+
+#xiaoguotu2 {
+    background-image: linear-gradient(to bottom, yellow, #dddd00 50%, orange);
+    width: 200px;
+    height: 70px;
+    margin-top: 5px;
+    display: inline-block;
+
+}
+
+#xiaoguotu3 {
+    background-color: yellow;
+    width: 200px;
+    height: 70px;
+    margin-top: 5px;
+    background-image: url(31.gif);
+    display: inline-block;
+
+}
+
+#xiaoguotu4 {
+    background-color: yellow;
+    width: 200px;
+    height: 70px;
+    margin-top: 5px;
+    background-image: url(31.gif);
+    background-repeat: no-repeat;
+    display: inline-block;
+
+}
+
+#xiaoguotu5 {
+    background-color: yellow;
+    width: 200px;
+    height: 70px;
+    margin-top: 5px;
+    background-image: url(31.gif);
+    background-repeat: no-repeat;
+    background-position: 50% center;
+    display: inline-block;
+
+}
 
 
 
